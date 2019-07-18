@@ -106,7 +106,6 @@ switch Method
         if isempty(spikeyness)
             spikeyness = 0.1;
         end
-        figure
         while id <= NumPoly
             aveRadius_x = ceil(sqrt(NN./sp));
             aveRadius_y = aveRadius_x * sp;
@@ -126,16 +125,9 @@ switch Method
                 for j = 1:length(yy)
                     in=inpolygon(xx(i),yy(j),x,y);
                     if double(in) == 1
-                        subplot(NumPoly,2,id*2-1)
-                        rectangle('Position',[xx(i)-0.5,yy(j)-0.5,1,1]);
                         N = N+1;
                         X(N,1) = xx(i);
                         Y(N,1) = yy(j);
-                        hold on
-                        rectangle('Position',[ctrX-0.5,ctrY-0.5,1,1],'FaceColor',[0.7,0.7,0.7]);
-                        axis equal;
-                        axis off;
-                        title(['Sample ',num2str(id),' (sp = ',num2str(sp),', grid size = ',num2str(kk),'km*',num2str(kk),'km)']);
                     end
                 end
             end
@@ -154,6 +146,18 @@ switch Method
             end
         end
         save Info_Shape_constrained.mat XY_shape2;
+        figure
+        for id = 1:NumPoly
+            subplot(NumPoly,2,id*2-1)
+            for i = 1: length(XY_shape2{id}(:,1))
+                rectangle('Position',[XY_shape2{id}(i,1)-0.5,XY_shape2{id}(i,2)-0.5,1,1]);
+                hold on
+                rectangle('Position',[ctrX-0.5,ctrY-0.5,1,1],'FaceColor',[0.7,0.7,0.7]);
+            end
+            axis equal;
+            axis off;
+            title(['Sample ',num2str(id),' (sp = ',num2str(sp),', grid size = ',num2str(kk),'km*',num2str(kk),'km)']);
+        end
 end
 plotindex = (2:2:NumPoly*2);
 subplot(NumPoly,2,plotindex)
