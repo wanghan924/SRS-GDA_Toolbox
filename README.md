@@ -109,7 +109,7 @@ And this code supports the paper "SRS-GDA: A Spatial Random Sampling Toolbox for
 
 ## Acknowledgments
 
-1. The author would like to thank Mike Ounsworth whose code for polygon generation updated on StackOverflow contributed to this work.  
+1. The author would like to thank Mike Ounsworth whose code for polygon generation uploaded on StackOverflow contributed to this work.  
 
 2. Thank the Centre of Hydrology and Ecology (CEH) for providing the GEAR dataset to test the toolbox. More details can be seen in "Tanguy, M., Dixon, H., Prosdocimi, I., Morris, D. G., & Keller, V. D. (2016). Gridded estimates of daily and monthly areal rainfall for the United Kingdom (1890-2009) [CEH-GEAR]. NERC Environmental Information Data Centre. Retrieved from NERC Environmental Information Data Centre: https://doi.org/10.5285/33604ea"
 
