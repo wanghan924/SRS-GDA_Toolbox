@@ -6,7 +6,7 @@ SRS-GDA toolbox is motivated by and aimed at quantification on hydro-climatic re
 
 The toolbox can be used to grid map into different resolution(1km, 5km and 10km) and do random spatial sampling of grid-based quantities with various constraints: shape, size, location and dominant orientation.
 
-More details can be found in the paper "SRS-GDA: A Spatial Random Sampling Toolbox for Grid-based Hydro-climatic Data Analysis in Environmental Change Studies" written by Han Wang and Yunqing Xuan
+More details can be found in the paper "SRS-GDA: A Spatial Random Sampling Toolbox for Grid-based Hydro-climatic Data Analysis in Environmental Change Studies" written by Han Wang and Yunqing Xuan https://doi.org/10.1016/j.envsoft.2019.104598 PLEASE ALWAYS CITE WHEN YOU USE SRS-GDA TOOLBOX
 
 ### Prerequisites and Introduction
 
