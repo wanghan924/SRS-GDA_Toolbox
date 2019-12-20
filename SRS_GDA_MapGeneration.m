@@ -37,11 +37,16 @@ inter = 100;
 if isempty(scene)
     error('Invalid input!');
 elseif scene ==1
-    [Filename, Pathname]=uigetfile({'*.jpg';'*.bmp';'*.png';'*.tiff'},'Map Selector');
+    [Filename, Pathname]=uigetfile({'*.jpg';'*.bmp';'*.png';'*.txt'},'Map Selector');
     filemap1 = [Pathname,'\',Filename];
     if (Filename~=0)
-        Data = imread(Filename);
-        P = double(Data(:,:,1));
+        File = split(Filename,'.');
+        if File{2} == 'txt'
+            P = load(Filename);
+        else
+            Data = imread(Filename);
+            P = double(Data(:,:,1));
+        end
     else
         return
     end
