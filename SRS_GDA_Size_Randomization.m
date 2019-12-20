@@ -1,6 +1,6 @@
 clear;clc;
 load NewMap.mat
-load NewAdj.mat
+%load NewAdj.mat
 %% Randomize size (keep same size and location)
 % Inputs:
 disp('Please define the inputs, or SRS-GDA toolbox will randomly assign them!');
@@ -28,9 +28,9 @@ switch k
         NN = round(Size/100);
 end
 if isempty(ctrX) && isempty(ctrY)
-    x_sta = randi(length(Adj),1,1);
-    sta = Adj(x_sta,1);
-    [ctrX,ctrY]=find(NewMap == sta);
+    sta = NewMap(~isnan(NewMap));
+    x_sta = sta(randi(length(sta)));
+    [ctrX,ctrY]=find(NewMap == x_sta);
 elseif isempty(ctrX) && ~isempty(ctrY)
     [cX,~]=find(~isnan(NewMap(:,ctrY)));
     ctrX = cX(randi(length(cX)),1); 
